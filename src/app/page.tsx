@@ -1,7 +1,11 @@
 import { getDb } from "@/lib/db";
 import Link from "next/link";
 
-export default async function Home() {
+export default async function Home({searchParams,}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const { abc } = searchParams;
+  console.log("abc:", abc);
   const db = getDb();
 
   const albums = await db
