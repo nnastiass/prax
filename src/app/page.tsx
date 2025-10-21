@@ -8,6 +8,7 @@ export default async function Home({searchParams,}: {
   console.log("abc:", abc);
   const db = getDb();
 
+
   const albums = await db
     .selectFrom("albums")
     .innerJoin("authors", "albums.author_id", "authors.id")
